@@ -1,0 +1,35 @@
+.nav {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1.2fr .8fr;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  padding: 1.3rem 0rem;
+}
+
+.logoContainer a {
+  color: var(--text-h);
+  font-size: 1.5rem;
+  font-weight: 507;
+  padding-left: 2rem;
+}
+
+.linksWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.linksWrapper a {
+  color: var(--text-h);
+  font-size: .95rem;
+  font-weight: 501;
+}
+
+.linksWrapper a:hover {
+  color: var(--accent);
+}

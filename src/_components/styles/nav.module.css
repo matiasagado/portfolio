@@ -22,7 +22,7 @@
 }
 
 .logoContainer a:hover {
-  font-size: 1.32rem;
+  color: var(--accent);
 }
 
 .linksWrapper {

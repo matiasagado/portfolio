@@ -1,7 +1,10 @@
 .nav {
   display: grid;
-  justify-content: space-between;
   grid-template-columns: 1.2fr .8fr;
+  position: sticky;
+  top: 0;
+  background: rgba(244, 239, 234, 0.95);
+  z-index: 1000;
 }
 
 .logoContainer {

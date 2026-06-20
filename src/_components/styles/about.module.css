@@ -37,6 +37,8 @@
     line-height: 1.1;
     margin-top: 0;
     margin-bottom: .7rem;
+    padding-top: 1rem;
+    font-family: var(--mono);
 }
 
 .paragraph {
@@ -59,7 +61,7 @@
 .techItem {
     position: relative;
     padding-left: 1.5rem;
-    color: var(--text);
+    color: var(--accent);
     font-size: 1.05rem;
 }
 

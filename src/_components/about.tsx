@@ -13,7 +13,7 @@ export default function About() {
                 </div>
                 <div className={styles.column1}>
                     <h2 className={styles.heading}>
-                        / about me
+                        /about me
                     </h2>
                     <p className={styles.paragraph}>
                         My work spans the full model lifecycle, from designing training

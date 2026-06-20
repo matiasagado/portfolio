@@ -1,6 +1,6 @@
 import { FaGithubSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
-import styles from './hero.module.css';
+import styles from './styles/hero.module.css';
 
 export default function Hero() {
     return (

@@ -17,10 +17,10 @@ export default function Hero() {
                     </p>
                 </div>
                 <div className={styles.linksWrapper}>
-                    <a className={styles.link}>
+                    <a className={styles.link} target="_blank" href="https://github.com/matiasagado">
                         <FaGithubSquare />
                     </a>
-                    <a className={styles.link}>
+                    <a className={styles.link} target="_blank" href="https://www.linkedin.com/in/matiasagado/">
                         <FaLinkedin />
                     </a>
                 </div>

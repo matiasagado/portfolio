@@ -12,9 +12,9 @@
 
 .logoContainer a {
   color: var(--text-h);
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   font-weight: 507;
-  padding-left: 2rem;
+  padding-left: 5rem;
 }
 
 .linksWrapper {

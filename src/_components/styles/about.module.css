@@ -1,0 +1,71 @@
+.section {
+    position: relative;
+    padding: 9rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.badge {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+    background: var(--accent-bg);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: .7rem;
+}
+
+.paragraph {
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: .6rem;
+    max-width: 36rem;
+}
+
+.column2 {
+    display: flex;
+    justify-content: center;
+}
+
+.imageCard {
+    background: var(--code-bg);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.aboutImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+    transform: scale(1.2);
+}

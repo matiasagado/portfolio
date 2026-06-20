@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 :root {
   --text: #0c0c0e;
   --text-h: #0c0c0e;

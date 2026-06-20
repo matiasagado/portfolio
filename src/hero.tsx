@@ -7,13 +7,10 @@ export default function Hero() {
         <section className={styles.section}>
             <div className={styles.column1}>
                 <div className={styles.name}>
-                    <span>MATIAS</span>
-                    <br />
-                    <span>AGADO</span>
+                    <span>SOFTWARE<br />ENGINEER</span>
                 </div>
                 <div>
-                    <p className={styles.role}>SOFTWARE ENGINEER</p>
-                    <p className={styles.tagline}>AI | Systems | Product</p>
+                    <p className={styles.tagline}>AI | Systems | Infastructure</p>
                     <p className={styles.description}>Building reliable software systems<br />
                         that solve real problems and<br />
                         create meanignful impact.
@@ -28,7 +25,9 @@ export default function Hero() {
                     </a>
                 </div>
             </div>
-            <div className={styles.column2}>GRID 2</div>
+            <div className={styles.column2}>
+                <img src="/hero.png" alt="Hero" className={styles.heroImage} />
+            </div>
         </section>
     );
 }

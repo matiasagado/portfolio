@@ -7,11 +7,11 @@ export default function Nav() {
                 <a>Matias Agado</a>
             </div>
             <div className={styles.linksWrapper}>
-                <a>ABOUT</a>
-                <a>EXERIENCE</a>
-                <a>SOFTWARE</a>
-                <a>HARDWARE</a>
-                <a>CONTACT</a>
+                <a href="#about">ABOUT</a>
+                <a href="#experience">EXERIENCE</a>
+                <a href="#software-projects">SOFTWARE</a>
+                <a href="#hardware-projects">HARDWARE</a>
+                <a href="#contact">CONTACT</a>
             </div>
         </nav>
     );

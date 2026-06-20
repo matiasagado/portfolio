@@ -4,7 +4,7 @@ const technologies = ['TypeScript', 'Next.js', 'React', 'Python', 'Docker'];
 
 export default function About() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="about">
             <div className={styles.content}>
                 <div className={styles.column2}>
                     <div className={styles.imageCard}>

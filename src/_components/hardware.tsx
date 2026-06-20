@@ -3,7 +3,7 @@ export default function Hardware(){
     const technologies = ['Linux', 'Tailscale', 'Docker', 'Pi-hole', 'NPM', 'Prometheus', 'Grafana', 'Loki', 'Ollama'];
 
     return(
-        <section>
+        <section id="hardware-projects">
             <div>
                 <p>infastructure</p>
                 <p>hardware</p>

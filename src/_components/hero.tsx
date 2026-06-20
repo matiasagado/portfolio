@@ -4,7 +4,7 @@ import styles from './styles/hero.module.css';
 
 export default function Hero() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="hero">
             <div className={styles.column1}>
                 <div className={styles.name}>
                     <span>SOFTWARE<br />ENGINEER</span>

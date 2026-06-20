@@ -18,6 +18,11 @@
   font-size: 1.3rem;
   font-weight: 507;
   padding-left: 5rem;
+  text-decoration: none;
+}
+
+.logoContainer a:hover {
+  font-size: 1.32rem;
 }
 
 .linksWrapper {

@@ -6,6 +6,7 @@ import About from './_components/about.tsx';
 import Experience from './_components/experience.tsx';
 import Software from './_components/software.tsx';
 import Hardware from './_components/hardware.tsx';
+import Contact from './_components/contact.tsx';
 import "./index.css";
 
 createRoot(document.getElementById('root')!).render(
@@ -18,5 +19,6 @@ createRoot(document.getElementById('root')!).render(
       <Software />
       <Hardware />
     </main>
+    <Contact />
   </StrictMode>,
 )

@@ -2,6 +2,40 @@ import { FiCpu, FiDatabase, FiHardDrive, FiMonitor } from 'react-icons/fi';
 import styles from './styles/hardware.module.css';
 
 export default function Hardware() {
+    const technologies = [
+        'Linux',
+        'Tailscale',
+        'Docker',
+        'Pi-hole',
+        'NPM',
+        'Prometheus',
+        'Grafana',
+        'Loki',
+        'Ollama',
+      ];
+    
+      const stats = [
+        {
+          icon: <FiCpu />,
+          value: 'i9-11900H',
+          label: 'CPU',
+        },
+        {
+          icon: <FiDatabase />,
+          value: '32 GB',
+          label: 'RAM (DDR4)',
+        },
+        {
+          icon: <FiHardDrive />,
+          value: '1.5 TB',
+          label: 'NVMe SSD',
+        },
+        {
+          icon: <FiMonitor />,
+          value: 'Ubuntu 24.04',
+          label: 'OS (LTS)',
+        },
+      ];
 
   return (
     <section id="hardware-projects" className={styles.section}>

@@ -4,7 +4,7 @@ export default function Nav() {
     return (
         <nav className={styles.nav}>
             <div className={styles.logoContainer}>
-                <a href="#hero">Matias Agado</a>
+                <a href="#hero">MA</a>
             </div>
             <div className={styles.linksWrapper}>
                 <a href="#about">ABOUT</a>

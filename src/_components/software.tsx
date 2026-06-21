@@ -1,5 +1,5 @@
 import { FiFolder, FiGithub, FiExternalLink } from 'react-icons/fi';
-import styles from './Software.module.css';
+import styles from './styles/software.module.css';
 
 interface Project {
   title: string;

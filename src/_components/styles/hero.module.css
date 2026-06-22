@@ -7,7 +7,7 @@
 
 .inner {
     display: grid;
-    padding: 80px 0px;
+    padding: 70px 0px 60px;
     grid-template-columns: 1fr 1.6fr;
     gap: 80px;
     align-items: center;

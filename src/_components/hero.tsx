@@ -17,7 +17,7 @@ export default function Hero() {
                     </p>
                     </div>
                     <div className={styles.socials}>
-                        <a target="_blank" href="https://github.com/matiasagadu" className={styles.socialBtn}>
+                        <a target="_blank" href="https://github.com/matiasagado" className={styles.socialBtn}>
                             <SiGithub />
                         </a>
                         <a target="_blank" href="https://www.linkedin.com/in/matiasagado/" className={styles.socialBtn}>

@@ -56,7 +56,7 @@
 }
 
 .socialBtn:hover {
-    border-color: #666;
+    border-color: var(--accent);
 }
 
 /* Middle */
@@ -85,6 +85,18 @@
     margin: 0;
     text-decoration: none;
     line-height: 1.5;
+}
+
+.emailValue {
+    font-size: 1rem;
+    color: #e8e4dc;
+    margin: 0;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+.emailValue:hover {
+    color: var(--accent);
 }
 
 /* Right */

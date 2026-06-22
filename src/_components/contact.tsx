@@ -1,3 +1,5 @@
+import { SiGithub } from "react-icons/si";
+import { GrLinkedinOption } from "react-icons/gr";
 import styles from './styles/contact.module.css';
 
 export default function Contact() {
@@ -14,18 +16,11 @@ export default function Contact() {
                         infrastructure.
                     </p>
                     <div className={styles.socials}>
-                        <a href="#" className={styles.socialBtn} aria-label="GitHub">
-                            {/* swap for react-icon */}
-                            GH
+                        <a className={styles.socialBtn} aria-label="GitHub" target="_blank" href="https://github.com/matiasagado">
+                            <SiGithub />
                         </a>
-                        <a href="#" className={styles.socialBtn} aria-label="LinkedIn">
-                            in
-                        </a>
-                        <a href="#" className={styles.socialBtn} aria-label="X">
-                            X
-                        </a>
-                        <a href="#" className={styles.socialBtn} aria-label="Email">
-                            @
+                        <a className={styles.socialBtn} aria-label="LinkedIn" target="_blank" href="https://www.linkedin.com/in/matiasagado/">
+                            <GrLinkedinOption />
                         </a>
                     </div>
                 </div>
@@ -38,8 +33,8 @@ export default function Contact() {
                     </div>
                     <div className={styles.infoBlock}>
                         <span className={styles.label}>EMAIL</span>
-                        <a href="mailto:matias@example.com" className={styles.value}>
-                            mfagado1@dons.usfca.edu
+                        <a href="mailto:matiasagado@gmail.com" className={styles.emailValue}>
+                            matiasagado@gmail.com
                         </a>
                     </div>
                     <div className={styles.infoBlock}>

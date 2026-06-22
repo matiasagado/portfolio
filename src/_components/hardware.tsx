@@ -1,5 +1,5 @@
 import styles from './styles/hardware.module.css';
-import { FiCpu, FiDatabase, FiMonitor, FiServer, FiWifi } from 'react-icons/fi';
+import { FiCpu, FiDatabase, FiMonitor, FiServer } from 'react-icons/fi';
 import { MdMemory } from 'react-icons/md';
 
 const specs = [
@@ -59,7 +59,7 @@ export default function Hardware() {
                             </div>
                         ))}
                     </div>
-                    <a className={styles.statusCard} href="https://github.com/matiasagado/homelab.git">
+                    <a className={styles.statusCard} href="https://github.com/matiasagado/homelab.git" target="_blank">
                         <span className={styles.statusDot} />
                         <div>
                             <p className={styles.statusTitle}>GitHub Respository</p>

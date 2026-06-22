@@ -1,6 +1,8 @@
 import styles from './styles/overview.module.css';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
+const technologies = ['HTML', 'CSS', 'TypeScript', 'JavaScript', 'Python', 'React', 'Next.js', 'PostgreSql', 'Docker', 'Git'];
+
 export default function Bento() {
     return (
         <section className={styles.section}>
@@ -11,7 +13,7 @@ export default function Bento() {
                     <span className={styles.badge}><span className={styles.dot} />STACK</span>
                     <h2 className={styles.stackHeading}>TOOLS I REACH FOR, FIRST.</h2>
                     <div className={styles.pills}>
-                        {['Python', 'PyTorch', 'Docker', 'Kubernetes', 'CUDA', 'Linux', 'Git', 'AWS'].map((t) => (
+                        {technologies.map((t) => (
                             <span key={t} className={styles.pill}>{t}</span>
                         ))}
                     </div>
@@ -39,7 +41,7 @@ export default function Bento() {
                 </div>
 
                 {/* Contact */}
-                <a href="mailto:hello@matiasagado.com" className={`${styles.tile} ${styles.contactTile}`}>
+                <a href="mailto:matiasagado@gmail.com" className={`${styles.tile} ${styles.contactTile}`}>
                     <span className={styles.contactEyebrow}>GET IN TOUCH</span>
                     <p className={styles.contactHeading}>GOT A PROJECT <em>IN MIND?</em></p>
                     <span className={styles.contactEmail}>matiasagado@gmail.com</span>

@@ -1,0 +1,254 @@
+.section {
+    background: var(--bg);
+    padding: 80px;
+    margin: 0 103px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    grid-template-areas:
+        "stack stack linkedin"
+        "edu quote contact"
+        "resume resume github";
+}
+
+.tile {
+    border-radius: 20px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+/* Stack */
+.stackTile {
+    grid-area: stack;
+    background: #e8c84b;
+    gap: 20px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    font-family: var(--navLinks);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.15);
+    color: #1a1a1a;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.stackHeading {
+    font-family: var(--text-accent);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill {
+    font-family: var(--navLinks);
+    font-size: 0.9rem;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.1);
+    color: #1a1a1a;
+}
+
+/* LinkedIn */
+.linkedinTile {
+    grid-area: linkedin;
+    background: #2f5755;
+    color: #f4f1ea;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* GitHub */
+.githubTile {
+    grid-area: github;
+    background: var(--card);
+    color: #888;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.socialIcon {
+    font-size: 2.2rem;
+}
+
+.socialIconGit {
+    color: var(--text);
+    font-size: 2.2rem;
+}
+
+.socialLabel {
+    font-family: var(--navLinks);
+    font-size: 0.9rem;
+}
+
+/* Education */
+.educationTile {
+    grid-area: edu;
+    background: var(--card);
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.crest {
+    width: 90px;
+    height: 88px;
+    background: #f5f0e4;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.crestImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.schoolName {
+    font-family: var(--text-accent);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.schoolDetail {
+    font-family: var(--navLinks);
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0;
+}
+
+/* Quote */
+.quoteTile {
+    grid-area: quote;
+    background: #161616;
+    color: #f4f1ea;
+    justify-content: center;
+    gap: 20px;
+}
+
+.quoteText {
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.quoteAttr {
+    font-family: var(--navLinks);
+    font-size: 0.82rem;
+    color: #666;
+}
+
+/* Contact */
+.contactTile {
+    grid-area: contact;
+    background: var(--accent);
+    color: #f4f1ea;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.contactEyebrow {
+    font-family: var(--navLinks);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    opacity: 0.85;
+}
+
+.contactHeading {
+    font-family: var(--text-accent);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.contactHeading em {
+    font-style: italic;
+}
+
+.contactEmail {
+    font-family: var(--navLinks);
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Resume */
+.resumeTile {
+    grid-area: resume;
+    background: var(--card);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resumeEyebrow {
+    font-family: var(--navLinks);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: #888;
+}
+
+.resumeHeading {
+    font-family: var(--text-accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 10px 0 0;
+    text-transform: uppercase;
+}
+
+.resumeHeading em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.arrowBtn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    color: #f4f1ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}

@@ -20,7 +20,7 @@ export default function Nav() {
                 <a className={styles.softwareLink} href="#software">SOFTWARE</a>
                 <a className={styles.hardwareLink} href="#hardware">HARDWARE</a>
                 <a className={styles.experienceLink} href="#experience">EXPERIENCE</a>
-                <a className={styles.contactLink}>RESUME</a>
+                <a className={styles.resumeLink}>RESUME</a>
             </div>
         </nav>
     );

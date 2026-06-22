@@ -28,18 +28,17 @@ export default function Bento() {
                 </a>
 
                 {/* Education */}
-                <div className={`${styles.tile} ${styles.educationTile}`}>
+                <a href="https://www.usfca.edu/arts-sciences/programs/undergraduate/computer-science/program-overview" target="_blank" className={`${styles.tile} ${styles.educationTile}`}>
                     <div className={styles.crest}>
                         <img src="/usfca-logo.png" alt="USF" className={styles.crestImg} />
                     </div>
                     <p className={styles.schoolName}>UNIVERSITY OF SAN FRANCISCO</p>
                     <p className={styles.schoolDetail}>BS Computer Science</p>
-                </div>
+                </a>
 
                 {/* Quote */}
                 <div className={`${styles.tile} ${styles.quoteTile}`}>
-                    <p className={styles.quoteText}>"Good infrastructure is invisible — it just works, every time."</p>
-                    <span className={styles.quoteAttr}>— Engineering Philosophy</span>
+                    <p className={styles.quoteText}>Good infrastructure is invisible — it just works, every time.</p>
                 </div>
 
                 {/* Contact */}

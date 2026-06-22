@@ -97,7 +97,6 @@
     color: #1a1a1a;
 }
 
-/* LinkedIn */
 .linkedinTile {
     grid-area: linkedin;
     background: #2f5755;
@@ -105,9 +104,14 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* GitHub */
+.linkedinTile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
 .githubTile {
     grid-area: github;
     background: var(--card);
@@ -115,6 +119,12 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.githubTile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .socialIcon {
@@ -139,6 +149,12 @@
     justify-content: center;
     gap: 12px;
     text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.educationTile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .crest {
@@ -204,6 +220,12 @@
     color: #f4f1ea;
     justify-content: space-between;
     gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactTile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .contactEyebrow {
@@ -238,6 +260,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resumeTile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .resumeEyebrow {

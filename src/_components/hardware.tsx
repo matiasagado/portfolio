@@ -1,12 +1,12 @@
 import styles from './styles/hardware.module.css';
 import { FiCpu, FiDatabase, FiMonitor, FiServer } from 'react-icons/fi';
-import { MdMemory } from 'react-icons/md';
+import { PiMemory, PiGraphicsCard } from "react-icons/pi";
 
 const specs = [
     { icon: <FiCpu />, value: 'Intel Core i9-11900H', label: 'CPU' },
-    { icon: <MdMemory />, value: '16GB DDR4 3200MHz', label: 'RAM' },
+    { icon: <PiMemory />, value: '16GB DDR4 3200MHz', label: 'RAM' },
+    { icon: <PiGraphicsCard />, value: 'RTX 3050', label: 'GPU' },
     { icon: <FiDatabase />, value: '512GB NVMe', label: 'STORAGE' },
-    { icon: <FiMonitor />, value: 'RTX 3050', label: 'GPU' },
 ];
 
 const technologies = ['Linux', 'Docker', 'Tailscale', 'Pi-Hole', 'NPM', 'Prometheus', 'Grafana', 'Loki', 'Ollama'];

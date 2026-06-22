@@ -50,10 +50,16 @@
     color: var(--accent);
 }
 
-.contactLink {
+.resumeLink {
     background: #1a1a1a;
     color: #f4f1ea !important;
     padding: 10px 22px;
     border-radius: 999px;
     letter-spacing: 0.1em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resumeLink:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }

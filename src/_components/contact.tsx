@@ -44,8 +44,8 @@ export default function Contact() {
                 </div>
 
                 {/* Right: placeholder for image/card */}
-                <div className={styles.right}>
-                    <div className={styles.cardPlaceholder} />
+                <div className={styles.photo}>
+                    <img src="/contact-pic.png" alt="Matias Agado" className={styles.img} />
                 </div>
 
             </div>

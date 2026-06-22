@@ -48,7 +48,7 @@ export default function Bento() {
                 </a>
 
                 {/* Resume */}
-                <a href="/resume.pdf" target="_blank" className={`${styles.tile} ${styles.resumeTile}`}>
+                <a href="/Resume-Matias-Agado.pdf" download="Resume-Matias-Agado.pdf" className={`${styles.tile} ${styles.resumeTile}`}>
                     <div>
                         <span className={styles.resumeEyebrow}>RESUME · PDF · 1 PAGE</span>
                         <p className={styles.resumeHeading}>THE LONG VERSION, <em>PRINTABLE.</em></p>

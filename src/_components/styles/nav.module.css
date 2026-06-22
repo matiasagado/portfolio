@@ -4,10 +4,19 @@
     align-items: center;
     padding: 19px 50px;
     margin: 0 103px;
-    background: var(--bg);
+    background: rgba(244, 241, 234, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
 }
 
-.logoContainer {}
+.navScrolled {
+    border-color: #d0ccc4;
+}
 
 .heroLink {
     font-weight: 1000;

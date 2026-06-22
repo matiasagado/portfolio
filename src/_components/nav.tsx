@@ -1,8 +1,17 @@
+import { useEffect, useState } from 'react';
 import styles from './styles/nav.module.css';
 
 export default function Nav() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 60);
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
     return(
-        <nav className={styles.nav}>
+        <nav className={`${styles.nav} ${scrolled ? styles.navScrolled : ''}`}>
             <div className={styles.logoContainer}>
                 <a className={styles.heroLink}>MA</a>
             </div>

@@ -1,11 +1,11 @@
 body {
-  margin: 0;
+  margin: 0 103px;
 }
 
 :root {
   --text: #0c0c0e;
   --text-h: #0c0c0e;
-  --bg: #f4efea;
+  --bg: #f4f0ea;
   --border: #e5e4e7;
   --code-bg: #4e4e4e;
   --accent: #c0510d;
@@ -15,8 +15,8 @@ body {
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: Arial, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --text-accent: 'Oswald', sans-serif;
+  --navLinks: 'Inter', sans-serif;
   --mono: 'Courier Prime', ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);

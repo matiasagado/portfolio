@@ -1,0 +1,18 @@
+import styles from './styles/nav.module.css';
+
+export default function Nav() {
+    return(
+        <nav className={styles.nav}>
+            <div className={styles.logoContainer}>
+                <a className={styles.heroLink}>MA</a>
+            </div>
+            <div className={styles.linksContainer}>
+                <a className={styles.aboutLink}>ABOUT</a>
+                <a className={styles.softwareLink}>SOFTWARE</a>
+                <a className={styles.hardwareLink}>HARDWARE</a>
+                <a className={styles.experienceLink}>EXPERIENCE</a>
+                <a className={styles.contactLink}>CONTACT</a>
+            </div>
+        </nav>
+    );
+}

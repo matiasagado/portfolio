@@ -1,0 +1,41 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 50px;
+    background: var(--bg);
+}
+
+.logoContainer {}
+
+.heroLink {
+    font-weight: 1000;
+    font-size: 1rem;
+    letter-spacing: 0em;
+    text-decoration: none;
+    color: inherit;
+    font-family: var(--text-accent);
+}
+
+.linksContainer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.linksContainer a {
+    font-size: 0.71rem;
+    font-weight: 410;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    color: var(--code-bg);
+    font-family: var(--navLinks);
+}
+
+.contactLink {
+    background: #1a1a1a;
+    color: #f4f1ea !important;
+    padding: 10px 22px;
+    border-radius: 999px;
+    letter-spacing: 0.1em;
+}

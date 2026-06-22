@@ -2,7 +2,7 @@ import styles from './styles/about.module.css';
 
 export default function About() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="about">
             <div className={styles.grid}>
                 <div className={styles.card}>
                     <span className={styles.badge}><span className={styles.dot} />ABOUT</span>

@@ -4,7 +4,7 @@ import styles from './styles/contact.module.css';
 
 export default function Contact() {
     return (
-        <section className={styles.contact}>
+        <section className={styles.contact} id="contact">
             <div className={styles.main}>
 
                 {/* Left: Name + Bio + Socials */}

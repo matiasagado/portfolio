@@ -4,7 +4,7 @@ import { GrLinkedinOption } from "react-icons/gr";
 
 export default function Hero() {
     return (
-        <section className={styles.hero}>
+        <section className={styles.hero} id="hero">
             <div className={styles.inner}>
                 <div className={styles.left}>
                     <div className={styles.text}>

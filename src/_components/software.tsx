@@ -21,7 +21,7 @@ const projects = [
 
 export default function Software() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="software">
             <div className={styles.header}>
                 <div className={styles.eyebrow}>
                     <span className={styles.line} />

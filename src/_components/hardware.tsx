@@ -15,7 +15,7 @@ const description = 'A self-hosted home server built for two things: keeping my 
 
 export default function Hardware() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="hardware">
             <div className={styles.header}>
                 <div className={styles.eyebrow}>
                     <span className={styles.line} />

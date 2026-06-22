@@ -2,7 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Nav from './_components/nav';
 import Hero from './_components/hero';
-import Software from './_components/software'
+import Software from './_components/software';
+import Hardware from './_components/hardware';
 import Contact from './_components/contact';
 import "./index.css";
 
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')!).render(
     <main>
       <Hero />
       <Software />
+      <Hardware />
     </main>
     <Contact />
   </StrictMode>,

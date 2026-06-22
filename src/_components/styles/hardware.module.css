@@ -1,0 +1,204 @@
+.section {
+    background: var(--bg);
+    padding: 220px 80px;
+    margin: 0 103px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.line {
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent-green);
+}
+
+.eyebrowText {
+    font-family: var(--navLinks);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--accent-green);
+}
+
+.heading {
+    font-family: var(--text-accent);
+    font-size: 3.7rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.subheading {
+    font-family: var(--navLinks);
+    font-size: 1.2rem;
+    color: var(--code-bg);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Main card */
+.card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.iconBox {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #c7e0d6;
+    color: var(--accent-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.cardTitle {
+    font-family: var(--text-accent);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.cardMeta {
+    font-family: var(--navLinks);
+    font-size: 0.85rem;
+    color: #adaba8;
+}
+
+.cardDesc {
+    font-family: var(--navLinks);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--code-bg);
+    margin: 0;
+    flex: 1;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    font-family: var(--navLinks);
+    font-size: 0.75rem;
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid #f3f2f0;
+    color: #6e6d6b;
+    background-color: #f3f2f0;
+}
+
+/* Right column */
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.specGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.specCard {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.specIcon {
+    font-size: 1.2rem;
+    color: #adaba8;
+}
+
+.specValue {
+    font-family: var(--text-accent);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.specLabel {
+    font-family: var(--navLinks);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: #adaba8;
+}
+
+/* Status */
+.statusCard {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.statusDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #4caf6e;
+    flex-shrink: 0;
+}
+
+.statusTitle {
+    font-family: var(--navLinks);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text);
+}
+
+.statusSub {
+    font-family: var(--navLinks);
+    font-size: 0.8rem;
+    color: #adaba8;
+    margin: 4px 0 0;
+}

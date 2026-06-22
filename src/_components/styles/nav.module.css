@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 19px 50px;
+    margin: 0 103px;
     background: var(--bg);
 }
 

@@ -6,6 +6,7 @@ import About from './_components/about';
 import Overview from './_components/overview';
 import Software from './_components/software';
 import Hardware from './_components/hardware';
+import Experience from './_components/experience';
 import Contact from './_components/contact';
 import "./index.css";
 
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
       <Overview />
       <Software />
       <Hardware />
+      <Experience />
     </main>
     <Contact />
   </StrictMode>,

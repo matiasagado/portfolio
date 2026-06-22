@@ -1,7 +1,7 @@
 import styles from './styles/overview.module.css';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const technologies = ['HTML', 'CSS', 'TypeScript', 'JavaScript', 'Python', 'React', 'Next.js', 'PostgreSql', 'Docker', 'Git'];
+const technologies = ['HTML', 'CSS', 'TypeScript', 'Python', 'React', 'Next.js', 'PostgreSql', 'Docker', 'Linux', 'C', 'Git'];
 
 export default function Bento() {
     return (

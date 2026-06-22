@@ -8,7 +8,7 @@ const projects = [
         icon: <FiBarChart2 />,
         name: 'AI LOG ANALYSIS',
         description: 'A production monitoring and diagnostic tool for analyzing model behavior in real time. Detects anomalies in inference logs, tracks performance degradation across model versions, and surfaces actionable insights through an intuitive dashboard. Built with Python and PyTorch, it integrates directly into existing ML pipelines with minimal configuration overhead.',
-        tags: ['Python', 'PyTorch', 'Monitoring', 'Dashboards'],
+        tags: ['HTML', 'CSS', 'Python', 'Go'],
         repo: 'https://github.com/matiasagado/Groot.git',
     },
     {
@@ -16,7 +16,15 @@ const projects = [
         icon: <FiLayers />,
         name: 'FOOTHOLD',
         description: 'A foundational infrastructure layer that makes model training reproducible and portable. Provides versioned experiment tracking, automated hyperparameter search, and environment snapshotting so you can move training workloads across different hardware setups without rebuilding from scratch. Designed with Docker-based containerization for consistent execution everywhere.',
-        tags: ['Python', 'Docker', 'Experiment Tracking', 'Infrastructure'],
+        tags: ['HTML', 'CSS', 'Typescript', 'Next.js', 'Postgresql'],
+        repo: 'https://github.com/matiasagado/foothold-web.git',
+    },
+    {
+        number: '03',
+        icon: <FiLayers />,
+        name: 'RISC-V CPU Emulator',
+        description: 'A foundational infrastructure layer that makes model training reproducible and portable. Provides versioned experiment tracking, automated hyperparameter search, and environment snapshotting so you can move training workloads across different hardware setups without rebuilding from scratch. Designed with Docker-based containerization for consistent execution everywhere.',
+        tags: ['C','RISC-V Assembly'],
         repo: 'https://github.com/matiasagado/foothold-web.git',
     },
 ];

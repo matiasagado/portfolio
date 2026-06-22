@@ -71,7 +71,7 @@
     display: flex;
     gap: 10px;
     width: max-content;
-    animation: marquee 18s linear infinite;
+    animation: marquee 12s linear infinite;
 }
 
 .marqueeTrack:hover {

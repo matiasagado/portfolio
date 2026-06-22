@@ -66,11 +66,24 @@
 }
 
 .availDot {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     background: #4caf6e;
     flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 110, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(76, 175, 110, 0);
+    }
 }
 
 .photo {

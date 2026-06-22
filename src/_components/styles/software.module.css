@@ -1,0 +1,127 @@
+.section {
+    background: var(--bg);
+    padding: 220px 80px;
+    margin: 0 103px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--accent);
+    font-family: var(--navLinks);
+}
+
+.line {
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+}
+
+.eyebrowText {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--accent-orange);
+}
+
+.heading {
+    font-family: var(--text-accent);
+    font-size: 3.7rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.subheading {
+    font-family: var(--navLinks);
+    font-size: 1.2rem;
+    color: var(--code-bg);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* Card */
+.card {
+    background: var(--card);
+    border: 1px solid var(--card);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #adaba8;
+}
+
+.iconBox {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #f7dcc3;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.projectName {
+    font-family: var(--text-accent);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.projectDesc {
+    font-family: var(--navLinks);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--code-bg);
+    margin: 0;
+    flex: 1;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.tag {
+    font-family: var(--navLinks);
+    font-size: 0.75rem;
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid #f3f2f0;
+    color: #6e6d6b;
+    background-color: #f3f2f0;
+}

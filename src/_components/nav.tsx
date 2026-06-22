@@ -11,7 +11,7 @@ export default function Nav() {
                 <a className={styles.softwareLink}>SOFTWARE</a>
                 <a className={styles.hardwareLink}>HARDWARE</a>
                 <a className={styles.experienceLink}>EXPERIENCE</a>
-                <a className={styles.contactLink}>CONTACT</a>
+                <a className={styles.contactLink}>RESUME</a>
             </div>
         </nav>
     );

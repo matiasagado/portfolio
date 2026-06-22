@@ -12,11 +12,13 @@ export default function Bento() {
                 <div className={`${styles.tile} ${styles.stackTile}`}>
                     <span className={styles.badge}><span className={styles.dot} />STACK</span>
                     <h2 className={styles.stackHeading}>TOOLS I REACH FOR, FIRST.</h2>
-                    <div className={styles.pills}>
-                        {technologies.map((t) => (
-                            <span key={t} className={styles.pill}>{t}</span>
+                    <div className={styles.marqueeWrapper}>
+                    <div className={styles.marqueeTrack}>
+                        {[...technologies, ...technologies].map((t, i) => (
+                            <span key={i} className={styles.pill}>{t}</span>
                         ))}
                     </div>
+                </div>
                 </div>
 
                 {/* LinkedIn */}

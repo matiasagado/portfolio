@@ -7,10 +7,10 @@ export default function About() {
                 <div className={styles.card}>
                     <span className={styles.badge}><span className={styles.dot} />ABOUT</span>
                     <p className={styles.text}>
-                        I am an AI Model Engineer based in{' '}
+                        I train AI Models and I'm based in{' '}
                         <em>San Francisco, California</em>,{' '}
-                        building reliable ML systems from training pipelines to
-                        private GPU clusters.
+                        I use my experience in client-facing roles and technical depth to 
+                        communicate value and talk credibly about technical products.
                     </p>
                     <span className={styles.availability}>
                         <span className={styles.availDot} />

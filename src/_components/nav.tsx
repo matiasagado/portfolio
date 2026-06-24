@@ -20,7 +20,7 @@ export default function Nav() {
                 <a className={styles.softwareLink} href="#software">SOFTWARE</a>
                 <a className={styles.hardwareLink} href="#hardware">HARDWARE</a>
                 <a className={styles.experienceLink} href="#experience">EXPERIENCE</a>
-                <a className={styles.resumeLink}>RESUME</a>
+                <a className={styles.resumeLink} href="/Resume-Matias-Agado.pdf" download="Resume-Matias-Agado.pdf">RESUME</a>
             </div>
         </nav>
     );

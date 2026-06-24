@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './styles/experience.module.css';
 
 const experience = [
@@ -65,53 +65,75 @@ const experience = [
 
 export default function Experience() {
     const [active, setActive] = useState(0);
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!sectionRef.current) return;
+            const { top, height } = sectionRef.current.getBoundingClientRect();
+            const scrollable = height - window.innerHeight;
+            const scrolled = -top;
+            const progress = Math.max(0, Math.min(1, scrolled / scrollable));
+            const index = Math.min(
+                experience.length - 1,
+                Math.floor(progress * experience.length)
+            );
+            setActive(index);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const job = experience[active];
 
     return (
-        <section className={styles.section} id="experience">
-            <div className={styles.header}>
-                <div className={styles.eyebrow}>
-                    <span className={styles.line} />
-                    <span className={styles.eyebrowText}>CAREER</span>
+        <div ref={sectionRef} className={styles.scrollWrapper}>
+            <section className={styles.section} id="experience">
+                <div className={styles.sticky}>
+                    <div className={styles.header}>
+                        <div className={styles.eyebrow}>
+                            <span className={styles.line} />
+                            <span className={styles.eyebrowText}>CAREER</span>
+                        </div>
+                        <h2 className={styles.heading}>EXPERIENCE</h2>
+                        <p className={styles.subheading}>
+                            Computer Science graduate with a background in revenue-driven and client-facing roles.
+                            From cold-calling distressed property owners to managing high-volume service environments.
+                        </p>
+                    </div>
+                    <div className={styles.divider} />
+
+                    <div className={styles.layout}>
+                        <ul className={styles.sidebar}>
+                            {experience.map((e, i) => (
+                                <li
+                                    key={e.company}
+                                    className={`${styles.sideItem} ${i === active ? styles.sideItemActive : ''}`}
+                                    onClick={() => setActive(i)}
+                                >
+                                    {e.company}
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className={styles.detail}>
+                            <h3 className={styles.roleHeading}>
+                                {job.role} <span className={styles.at}>@</span>{' '}
+                                <span className={styles.company}>{job.company}</span>
+                            </h3>
+                            <span className={styles.dates}>{job.dates}</span>
+                            <ul className={styles.bullets}>
+                                {job.bullets.map((b, i) => (
+                                    <li key={i} className={styles.bullet}>{b}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className={styles.divider} />
                 </div>
-                <h2 className={styles.heading}>EXPERIENCE</h2>
-                <p className={styles.subheading}>
-                Computer Science graduate with a background in revenue-driven and client-facing roles.
-                From cold-calling distressed property owners to managing high-volume service environments.
-                </p>
-            </div>
-            <div className={styles.divider} />
-
-            <div className={styles.layout}>
-                {/* Sidebar */}
-                <ul className={styles.sidebar}>
-                    {experience.map((e, i) => (
-                        <li
-                            key={e.company}
-                            className={`${styles.sideItem} ${i === active ? styles.sideItemActive : ''}`}
-                            onClick={() => setActive(i)}
-                        >
-                            {e.company}
-                        </li>
-                    ))}
-                </ul>
-
-                {/* Detail */}
-                <div className={styles.detail}>
-                    <h3 className={styles.roleHeading}>
-                        {job.role} <span className={styles.at}>@</span>{' '}
-                        <span className={styles.company}>{job.company}</span>
-                    </h3>
-                    <span className={styles.dates}>{job.dates}</span>
-                    <ul className={styles.bullets}>
-                        {job.bullets.map((b, i) => (
-                            <li key={i} className={styles.bullet}>{b}</li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-
-            <div className={styles.divider} />
-        </section>
+            </section>
+        </div>
     );
 }

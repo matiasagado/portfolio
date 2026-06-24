@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './styles/software.module.css';
-import { FiBarChart2, FiLayers, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiCpu, FiActivity, FiZap, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const featured = [
     {
@@ -29,11 +29,27 @@ const featured = [
 const projects = [
     {
         number: '01',
-        icon: <FiLayers />,
-        name: 'RISC-V CPU Emulator',
-        description: 'Built a 32-bit RISC-V CPU emulator in software, implementing a full register file, instruction decoder (opcodes, registers, immediates), and hardware-style memory address mapping.',
-        tags: ['C', 'RISC-V Assembly'],
-        repo: 'https://github.com/matiasagado/foothold-web.git',
+        icon: <FiCpu />,
+        name: 'Probabilistic AI Agent',
+        description: 'Built a probabilistic inference engine implementing Hidden Markov Models, Bayesian belief networks, and the Viterbi and Forward algorithms for robot localization and part-of-speech tagging.',
+        tags: ['Python', 'pgmpy', 'NumPy'],
+        repo: 'https://github.com/matiasagado',
+    },
+    {
+        number: '02',
+        icon: <FiActivity />,
+        name: 'Mars Lander RL',
+        description: 'Implemented value iteration, policy iteration, and Q-learning to navigate a stochastic Mars lander to a safe landing site, with Monte Carlo simulation to evaluate learned policies.',
+        tags: ['Python', 'NumPy'],
+        repo: 'https://github.com/matiasagado',
+    },
+    {
+        number: '03',
+        icon: <FiZap />,
+        name: 'Deep Learning Pipeline',
+        description: 'Built and trained CNNs for image classification, implemented Deep Q-Learning on Atari games, and fine-tuned BERT for sentiment analysis.',
+        tags: ['Python', 'TensorFlow', 'PyTorch'],
+        repo: 'https://github.com/matiasagado',
     },
 ];
 
@@ -89,10 +105,10 @@ export default function Software() {
                     </div>
                 </div>
                 <div className={styles.dots}>
-                    {featured.map((_, i) => (
-                        <span key={i} className={`${styles.dot} ${i === active ? styles.dotActive : ''}`} />
-                    ))}
-                </div>
+                {featured.map((_, i) => (
+                    <span key={i} className={`${styles.dot} ${i === active ? styles.dotActive : ''}`} />
+                ))}
+            </div>
             </a>
 
             {/* GRID */}

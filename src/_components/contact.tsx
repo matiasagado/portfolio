@@ -11,9 +11,8 @@ export default function Contact() {
                 <div className={styles.left}>
                     <h1 className={styles.name}>MATIAS<br />AGADO</h1>
                     <p className={styles.bio}>
-                        AI Model Engineer at Handshake AI. Building reliable machine learning
-                        systems with a focus on model training, evaluation, and hardware-aware
-                        infrastructure.
+                        Training AI Models at Handshake AI. Building reliable machine learning
+                        systems with a focus on model training, evaluation, and infrastructure.
                     </p>
                     <div className={styles.socials}>
                         <a className={styles.socialBtn} aria-label="GitHub" target="_blank" href="https://github.com/matiasagado">
@@ -33,8 +32,8 @@ export default function Contact() {
                     </div>
                     <div className={styles.infoBlock}>
                         <span className={styles.label}>EMAIL</span>
-                        <a href="mailto:matiasagado@gmail.com" className={styles.emailValue}>
-                            matiasagado@gmail.com
+                        <a href="mailto:mfagado1@dons.usfca.edu" className={styles.emailValue}>
+                            mfagado1@dons.usfca.edu
                         </a>
                     </div>
                     <div className={styles.infoBlock}>
@@ -43,7 +42,6 @@ export default function Contact() {
                     </div>
                 </div>
 
-                {/* Right: placeholder for image/card */}
                 <div className={styles.photo}>
                     <img src="/contact-pic.png" alt="Matias Agado" className={styles.img} />
                 </div>

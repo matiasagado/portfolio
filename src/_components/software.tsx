@@ -1,47 +1,50 @@
+import { useState } from 'react';
 import styles from './styles/software.module.css';
-import { FiBarChart2 } from 'react-icons/fi';
-import { FiLayers } from 'react-icons/fi';
+import { FiBarChart2, FiLayers, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
-const projects = [
+const featured = [
     {
-        image: "/foothold.png",
-        number: '01',
-        icon: <FiLayers />,
-        name: 'FOOTHOLD',
-        description: 'A foundational infrastructure layer that makes model training reproducible and portable. Provides versioned experiment tracking, automated hyperparameter search, and environment snapshotting so you can move training workloads across different hardware setups without rebuilding from scratch. Designed with Docker-based containerization for consistent execution everywhere.',
-        tags: ['HTML', 'CSS', 'Typescript', 'Next.js', 'Postgresql'],
-        repo: 'https://github.com/matiasagado/foothold-web.git',
-    },
-    {
-        image: "/foothold.png",
-        number: '02',
-        icon: <FiBarChart2 />,
-        name: 'Groot',
-        description: 'A production monitoring and diagnostic tool for analyzing model behavior in real time. Detects anomalies in inference logs, tracks performance degradation across model versions, and surfaces actionable insights through an intuitive dashboard. Built with Python and PyTorch, it integrates directly into existing ML pipelines with minimal configuration overhead.',
-        tags: ['HTML', 'CSS', 'Python', 'Go'],
+        image: "/groot.png",
+        name: 'GROOT',
+        description: 'Built a real-time log analysis system that automatically flagged security threats across thousands of logs, with a dashboard for visualizing system health.',
+        tags: ['PYTHON', 'GO'],
         repo: 'https://github.com/matiasagado/Groot.git',
     },
     {
         image: "/foothold.png",
-        number: '04',
-        icon: <FiLayers />,
-        name: 'Polaris',
-        description: 'A foundational infrastructure layer that makes model training reproducible and portable. Provides versioned experiment tracking, automated hyperparameter search, and environment snapshotting so you can move training workloads across different hardware setups without rebuilding from scratch. Designed with Docker-based containerization for consistent execution everywhere.',
-        tags: ['Java'],
-        repo: 'https://github.com/matiasagado/Polaris.git',
+        name: 'FOOTHOLD',
+        description: 'Built a full-stack SaaS platform for student campus discovery. Designed the frontend, architected the backend, and drove the full product lifecycle.',
+        tags: ['TYPESCRIPT', 'NEXT.JS', 'SUPABASE'],
+        repo: 'https://github.com/matiasagado/foothold-web.git',
     },
     {
-        image: "/foothold.png",
-        number: '03',
+        image: "/polaris.png",
+        name: 'POLARIS',
+        description: 'Built a multithreaded inverted index search engine capable of indexing 10,000+ documents, with algorithmic optimizations to improve query throughput.',
+        tags: ['JAVA', 'JAVA SERVLETS'],
+        repo: 'https://github.com/matiasagado/Polaris.git',
+    },
+];
+
+const projects = [
+    {
+        number: '01',
         icon: <FiLayers />,
         name: 'RISC-V CPU Emulator',
-        description: 'A foundational infrastructure layer that makes model training reproducible and portable. Provides versioned experiment tracking, automated hyperparameter search, and environment snapshotting so you can move training workloads across different hardware setups without rebuilding from scratch. Designed with Docker-based containerization for consistent execution everywhere.',
-        tags: ['C','RISC-V Assembly'],
+        description: 'Built a 32-bit RISC-V CPU emulator in software, implementing a full register file, instruction decoder (opcodes, registers, immediates), and hardware-style memory address mapping.',
+        tags: ['C', 'RISC-V Assembly'],
         repo: 'https://github.com/matiasagado/foothold-web.git',
     },
 ];
 
 export default function Software() {
+    const [active, setActive] = useState(0);
+
+    const prev = () => setActive((i) => (i - 1 + featured.length) % featured.length);
+    const next = () => setActive((i) => (i + 1) % featured.length);
+
+    const current = featured[active];
+
     return (
         <section className={styles.section} id="software">
             <div className={styles.header}>
@@ -56,14 +59,46 @@ export default function Software() {
                 </p>
             </div>
 
+            {/* CAROUSEL */}
+            <a href={current.repo} target="_blank" className={styles.carousel}>
+                <img src={current.image} alt={current.name} className={styles.carouselImg} />
+                <div className={styles.carouselOverlay} />
+                <button
+                    className={`${styles.arrow} ${styles.arrowLeft}`}
+                    onClick={(e) => { e.preventDefault(); prev(); }}
+                >
+                    <FiChevronLeft />
+                </button>
+                <button
+                    className={`${styles.arrow} ${styles.arrowRight}`}
+                    onClick={(e) => { e.preventDefault(); next(); }}
+                >
+                    <FiChevronRight />
+                </button>
+                <div className={styles.carouselContent}>
+                    <h3 className={styles.carouselName}>{current.name}</h3>
+                    <p className={styles.carouselDesc}>{current.description}</p>
+                    <div className={styles.carouselTags}>
+                        {current.tags.map((tag, i) => (
+                            <span key={tag}>
+                                {tag}{i < current.tags.length - 1 && (
+                                    <span className={styles.carouselDivider}> / </span>
+                                )}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+                <div className={styles.dots}>
+                    {featured.map((_, i) => (
+                        <span key={i} className={`${styles.dot} ${i === active ? styles.dotActive : ''}`} />
+                    ))}
+                </div>
+            </a>
+
+            {/* GRID */}
             <div className={styles.grid}>
                 {projects.map((project) => (
                     <a key={project.number} href={project.repo} target='_blank' className={styles.card}>
-                        <img src={project.image} alt={project.name} className={styles.cardImage} />
-                        {/* <div className={styles.cardTop}>
-                            <span className={styles.number}>{project.number}</span>
-                            <span className={styles.iconBox}>{project.icon}</span>
-                        </div> */}
                         <h3 className={styles.projectName}>{project.name}</h3>
                         <p className={styles.projectDesc}>{project.description}</p>
                         <div className={styles.tags}>

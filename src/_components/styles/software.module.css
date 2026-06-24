@@ -50,6 +50,126 @@
     line-height: 1.6;
 }
 
+.carousel {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 480px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.carouselImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.carouselOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+}
+
+.carouselContent {
+    position: absolute;
+    bottom: 48px;
+    left: 48px;
+    right: 120px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.carouselName {
+    font-family: var(--text-accent);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.carouselDesc {
+    font-family: var(--navLinks);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 560px;
+}
+
+.carouselTags {
+    font-family: var(--navLinks);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--accent-orange);
+    margin-top: 4px;
+}
+
+.carouselDivider {
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 4px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.arrowLeft {
+    left: 20px;
+}
+
+.arrowRight {
+    right: 20px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 70px;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    transition: background 0.2s;
+}
+
+.dotActive {
+    background: var(--accent-green);
+}
+
+/* Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -57,6 +177,7 @@
     width: 100%;
 }
 
+/* Card */
 .card {
     background: var(--card);
     border: 1px solid var(--card);
@@ -67,23 +188,23 @@
     gap: 2px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
-    height: 500px;
+    height: 300px;
     width: 100%;
     box-sizing: border-box;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 32px rgba(0, 0, 0, 0.25);
 }
 
 .cardImage {
     width: 100%;
-    height: 190px;
+    height: 200px;
     object-fit: cover;
+    object-position: top;
     border-radius: 12px;
     margin-bottom: 16px;
-    aspect-ratio: 3/2;
 }
 
 .cardTop {
@@ -115,7 +236,7 @@
     color: var(--text);
     font-size: 1.4rem;
     font-weight: 700;
-    margin: 0;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 

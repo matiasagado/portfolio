@@ -1,5 +1,5 @@
 import styles from './styles/hardware.module.css';
-import { FiCpu, FiDatabase, FiMonitor, FiServer } from 'react-icons/fi';
+import { FiCpu, FiDatabase, FiServer } from 'react-icons/fi';
 import { PiMemory, PiGraphicsCard } from "react-icons/pi";
 
 const specs = [

@@ -10,13 +10,13 @@ const featured = [
         tags: ['PYTHON', 'GO'],
         repo: 'https://github.com/matiasagado/Groot.git',
     },
-    {
-        image: "/foothold.png",
-        name: 'FOOTHOLD',
-        description: 'Built a full-stack SaaS platform for student campus discovery. Designed the frontend, architected the backend, and drove the full product lifecycle.',
-        tags: ['TYPESCRIPT', 'NEXT.JS', 'SUPABASE'],
-        repo: 'https://github.com/matiasagado/foothold-web.git',
-    },
+    // {
+    //     image: "/foothold.png",
+    //     name: 'FOOTHOLD',
+    //     description: 'Built a full-stack SaaS platform for student campus discovery. Designed the frontend, architected the backend, and drove the full product lifecycle.',
+    //     tags: ['TYPESCRIPT', 'NEXT.JS', 'SUPABASE'],
+    //     repo: 'https://github.com/matiasagado/foothold-web.git',
+    // },
     {
         image: "/polaris.png",
         name: 'POLARIS',

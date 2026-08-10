@@ -12,7 +12,7 @@ export default function Hero() {
                         <span className={styles.tags}>AI | SYSTEMS | INFRASTRUCTURE</span>
                         <span className={styles.name}>Matias Agado</span>
                         <p className={styles.bio}>Building reliable software systems that <br/>
-                        solve real problems and create<br />
+                        hold value and create<br />
                         meaningful impact.
                     </p>
                     </div>

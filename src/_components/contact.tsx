@@ -11,8 +11,9 @@ export default function Contact() {
                 <div className={styles.left}>
                     <h1 className={styles.name}>MATIAS<br />AGADO</h1>
                     <p className={styles.bio}>
-                        Training AI Models at Handshake AI. Building reliable machine learning
-                        systems with a focus on model training, evaluation, and infrastructure.
+                    Training models at Handshake AI and building reliable SaaS products. 
+                    I design, build, and deploy software that holds value.
+                    My focus is on turning complex problems into practical systems.
                     </p>
                     <div className={styles.socials}>
                         <a className={styles.socialBtn} aria-label="GitHub" target="_blank" href="https://github.com/matiasagado">
@@ -38,7 +39,7 @@ export default function Contact() {
                     </div>
                     <div className={styles.infoBlock}>
                         <span className={styles.label}>CURRENT FOCUS</span>
-                        <p className={styles.value}>AI Model Training &amp; Evaluation</p>
+                        <p className={styles.value}>AI Model Training &amp; SaaS</p>
                     </div>
                 </div>
 

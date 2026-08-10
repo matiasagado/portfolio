@@ -7,7 +7,7 @@ export default function About() {
                 <div className={styles.card}>
                     <span className={styles.badge}><span className={styles.dot} />ABOUT</span>
                     <p className={styles.text}>
-                        I build software around real problems.
+                        I build software around real problems.<br />
                         Based in{' '}<em>San Francisco, California</em>,{' '}
                         I understand the product lifecycle by translating a vision into technical requirements 
                         that lead to a usable product.

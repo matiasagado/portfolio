@@ -42,7 +42,6 @@ export default function Footer() {
 
             <div className={styles.bottom}>
                 <span>© {year} Matias Agado. All rights reserved.</span>
-                <span>Built with React &amp; TypeScript</span>
             </div>
         </footer>
     );

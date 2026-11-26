@@ -1,0 +1,157 @@
+.two {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 56px;
+    align-items: start;
+    padding-bottom: 150px;
+}
+
+.hint {
+    margin-top: 14px;
+    max-width: 30ch;
+    font-size: 14.5px;
+    color: var(--mut);
+}
+
+.list {
+    border-top: 1px solid var(--line);
+}
+
+.item {
+    border-bottom: 1px solid var(--line);
+}
+
+.h3 {
+    font: inherit;
+}
+
+.head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+}
+
+button.head {
+    cursor: pointer;
+}
+
+button.head:hover .ini {
+    border-color: var(--teal);
+}
+
+.ini {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: var(--card);
+    border: 1px solid var(--line2);
+    font: 700 12px var(--inter);
+    color: var(--teal-soft);
+    letter-spacing: 0.02em;
+    transition: border-color 0.15s ease;
+}
+
+.who {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.role {
+    font: 600 16.5px var(--inter);
+    color: #fff;
+}
+
+.company {
+    font-size: 13.5px;
+    color: var(--mut);
+}
+
+.dates {
+    font-size: 12.5px;
+    color: var(--mut);
+    white-space: nowrap;
+}
+
+.chev {
+    width: 16px;
+    text-align: center;
+    color: var(--mut);
+}
+
+.panel {
+    padding: 0 0 24px 62px;
+}
+
+.bullets {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #c9c9ce;
+}
+
+.bullets li::marker {
+    color: var(--teal);
+}
+
+.skills {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skills li {
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(45, 212, 191, 0.1);
+    border: 1px solid rgba(45, 212, 191, 0.25);
+    font: 500 12px var(--inter);
+    color: var(--teal-soft);
+}
+
+@media (max-width: 1000px) {
+    .two {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 560px) {
+    .head {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .dates {
+        order: 3;
+        width: 100%;
+        padding-left: 56px;
+    }
+
+    .chev {
+        display: none;
+    }
+
+    .panel {
+        padding-left: 0;
+    }
+}

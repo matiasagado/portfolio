@@ -17,8 +17,7 @@ export default function Hero() {
 
     return (
         <section id="top" className={styles.hero}>
-            <Topo className={styles.topo} />
-            <div className={styles.vignette} aria-hidden="true" />
+            <Topo />
             <div className={styles.copy}>
                 <h1 className={styles.title}>Hi, I&apos;m Matias</h1>
                 <p className={styles.line}>

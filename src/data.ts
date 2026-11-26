@@ -9,15 +9,6 @@ export const HERO_LINE = 'Forward Deployed Engineer. LLM Evaluator. Builder.';
 
 export const stack = ['TypeScript', 'React', 'Next.js', 'PostgreSQL', 'Supabase', 'Prisma', 'Python', 'Go', 'Java', 'Docker', 'Git', 'Linux'];
 
-export type Focus = { id: string; label: string; title: string; text: string };
-
-export const focus: Focus[] = [
-    { id: 'product', label: 'Product', title: 'Product first', text: 'Start with the person who has the problem, write the spec, then build the smallest thing that helps.' },
-    { id: 'systems', label: 'Systems', title: 'Full-stack systems', text: 'Interface, API, database and infrastructure designed together, so they hold up as usage grows.' },
-    { id: 'security', label: 'Security', title: 'Secure by default', text: 'Row-level security keeps every school’s data its own, and tests prove it on every change.' },
-    { id: 'ai', label: 'AI', title: 'AI, evaluated', text: 'I test language models at Handshake AI and use vector search in production with pgvector.' },
-];
-
 export type Job = {
     role: string;
     company: string;

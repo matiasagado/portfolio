@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 
 export type Repo = {
     name: string;
-    html_url: string;
-    language: string | null;
     pushed_at: string;
     fork: boolean;
 };
@@ -12,7 +10,6 @@ export type GithubStats = {
     publicRepos: number;
     sinceYear: number;
     pushedThisYear: number;
-    recent: Repo[];
 };
 
 export type GithubState =
@@ -20,7 +17,7 @@ export type GithubState =
     | { status: 'error' }
     | { status: 'ok'; data: GithubStats };
 
-/** Public profile stats and recently pushed repos from GitHub's REST API (no token needed). */
+/** Public profile stats from GitHub's REST API (no token needed). */
 export function useGithub(user: string): GithubState {
     const [state, setState] = useState<GithubState>({ status: 'loading' });
 
@@ -45,7 +42,6 @@ export function useGithub(user: string): GithubState {
                         publicRepos: profile.public_repos,
                         sinceYear: new Date(profile.created_at).getFullYear(),
                         pushedThisYear: own.filter((r) => new Date(r.pushed_at).getFullYear() === year).length,
-                        recent: own.slice(0, 4),
                     },
                 });
             })
@@ -58,22 +54,4 @@ export function useGithub(user: string): GithubState {
     }, [user]);
 
     return state;
-}
-
-const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
-
-export function timeAgo(iso: string): string {
-    const diff = (new Date(iso).getTime() - Date.now()) / 1000;
-    const units: [Intl.RelativeTimeFormatUnit, number][] = [
-        ['year', 31_536_000],
-        ['month', 2_592_000],
-        ['week', 604_800],
-        ['day', 86_400],
-        ['hour', 3_600],
-        ['minute', 60],
-    ];
-    for (const [unit, secs] of units) {
-        if (Math.abs(diff) >= secs) return rtf.format(Math.round(diff / secs), unit);
-    }
-    return 'just now';
 }

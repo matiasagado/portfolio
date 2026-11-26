@@ -308,26 +308,9 @@
     color: var(--teal);
 }
 
-/* "invisible." as liquid glass: translucent teal fill with a slow sweeping highlight, no outline */
+/* "invisible." sits faded, so the word reads as what it says */
 .ghost {
-    background: linear-gradient(110deg,
-        rgba(255, 255, 255, 0.06) 0%,
-        rgba(153, 246, 228, 0.45) 30%,
-        rgba(255, 255, 255, 0.95) 42%,
-        rgba(45, 212, 191, 0.4) 52%,
-        rgba(255, 255, 255, 0.06) 75%,
-        rgba(153, 246, 228, 0.25) 100%);
-    background-size: 260% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.28));
-    animation: glass 5s ease-in-out infinite;
-}
-
-@keyframes glass {
-    0%, 100% { background-position: 100% 0; }
-    50% { background-position: 0 0; }
+    color: #4a4f4e;
 }
 
 .quote p {

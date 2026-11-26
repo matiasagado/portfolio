@@ -28,7 +28,7 @@ export default function Footer() {
 
             {/* The name stretches edge to edge at any width. */}
             <div className={styles.wordmark} aria-hidden="true">
-                <svg viewBox="0 0 1000 158" preserveAspectRatio="none">
+                <svg viewBox="0 0 1000 128" preserveAspectRatio="none">
                     <defs>
                         <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
                             <stop offset="0" stopColor="#22d3ee" />

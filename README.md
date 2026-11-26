@@ -3,9 +3,7 @@
   <p>My personal portfolio: a dark, single-page site built with Vite, React and TypeScript.</p>
 </div>
 
-<p align="center">
-  <img src="docs/demo.gif" alt="The portfolio loading: the hero types out the role line, then the page scrolls down to the project showcase" width="960" />
-</p>
+https://github.com/user-attachments/assets/31a82095-71f4-4359-ae1b-94f1f63eb308
 
 ## Set-up
 

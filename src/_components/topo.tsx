@@ -8,17 +8,24 @@ import styles from './styles/topo.module.css';
  */
 
 const PEAKS: [number, number, number][] = [[360, 260, 16], [1080, 430, 14], [760, 120, 8]];
+const SPEED = 0.25; // how fast the ripples travel along the lines (radians per second)
 
-function buildContours() {
+/** Ring paths at time t (seconds). The wobble terms travel around each ring, so the lines ripple like a snake. */
+function buildContours(t: number) {
     const paths: string[] = [];
     PEAKS.forEach(([cx, cy, rings], pi) => {
         for (let k = 1; k <= rings; k++) {
             const r = k * 34;
             let d = '';
             for (let a = 0; a <= 72; a++) {
-                const t = (a / 72) * Math.PI * 2;
-                const rr = r * (1 + 0.16 * Math.sin(3 * t + k * 0.45 + pi) + 0.07 * Math.sin(5 * t + k * 0.9) + 0.04 * Math.cos(7 * t + pi));
-                d += (a ? 'L' : 'M') + (cx + rr * Math.cos(t)).toFixed(1) + ' ' + (cy + rr * 0.72 * Math.sin(t)).toFixed(1);
+                const th = (a / 72) * Math.PI * 2;
+                const rr = r * (
+                    1 +
+                    0.16 * Math.sin(3 * th + k * 0.45 + pi + t * SPEED) +
+                    0.07 * Math.sin(5 * th + k * 0.9 - t * SPEED * 1.6) +
+                    0.04 * Math.cos(7 * th + pi + t * SPEED * 2.3)
+                );
+                d += (a ? 'L' : 'M') + (cx + rr * Math.cos(th)).toFixed(1) + ' ' + (cy + rr * 0.72 * Math.sin(th)).toFixed(1);
             }
             paths.push(d + 'Z');
         }
@@ -26,7 +33,8 @@ function buildContours() {
     return paths;
 }
 
-const CONTOURS = buildContours();
+const CONTOURS = buildContours(0);
+const FPS = 30;
 
 function Lines({ className, stroke, width }: { className: string; stroke: string; width: number }) {
     return (
@@ -52,7 +60,28 @@ export default function Topo() {
             el.style.setProperty('--y', `${e.clientY - r.top + 40}px`);
         };
         section.addEventListener('pointermove', onMove);
-        return () => section.removeEventListener('pointermove', onMove);
+
+        // Redraw every ring each frame so the lines themselves move.
+        const paths = [...el.querySelectorAll('svg')].map((svg) => [...svg.querySelectorAll('path')]);
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let raf = 0, last = 0, visible = true;
+        const start = performance.now();
+        const io = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
+        io.observe(el);
+        const loop = (now: number) => {
+            raf = requestAnimationFrame(loop);
+            if (!visible || now - last < 1000 / FPS) return;
+            last = now;
+            const next = buildContours((now - start) / 1000);
+            for (const layer of paths) layer.forEach((p, i) => p.setAttribute('d', next[i]));
+        };
+        if (!reduced) raf = requestAnimationFrame(loop);
+
+        return () => {
+            section.removeEventListener('pointermove', onMove);
+            cancelAnimationFrame(raf);
+            io.disconnect();
+        };
     }, []);
 
     return (

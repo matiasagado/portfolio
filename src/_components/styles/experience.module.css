@@ -13,29 +13,15 @@
 }
 
 .card {
-    position: relative;
     margin-top: 36px;
-    padding: 28px;
-    border-radius: 24px;
-    background: rgba(12, 13, 14, 0.82);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 1px solid #232327;
-    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    left: 28px;
-    right: 28px;
-    top: -1px;
-    height: 2px;
-    border-radius: 2px;
-    background: linear-gradient(90deg, var(--teal), transparent 75%);
+    padding: 18px;
+    border-radius: 28px;
+    background: #0f1a19;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: rotate(-1.5deg);
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7);
+    display: grid;
+    gap: 14px;
 }
 
 .cardHead {
@@ -66,8 +52,7 @@
 
 .who strong {
     color: #fff;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 16px;
 }
 
 .who small {
@@ -75,68 +60,62 @@
     font-size: 12.5px;
 }
 
-.dates {
-    font-size: 12px;
-    color: #5eead4;
+.pill {
+    padding: 7px 12px;
+    border-radius: 10px;
+    background: var(--teal);
+    color: #04201d;
+    font: 600 12px var(--inter);
     white-space: nowrap;
 }
 
+.inner {
+    padding: 18px;
+    border-radius: 18px;
+    background: #f4f7f6;
+}
+
 .role {
-    font: 700 28px/1.12 var(--inter);
-    color: #fff;
-    letter-spacing: -0.03em;
-}
-
-.track {
-    position: relative;
-    height: 4px;
-    border-radius: 99px;
-    background: #1c1c1f;
-}
-
-.track span {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    border-radius: 99px;
-    background: linear-gradient(90deg, #22d3ee, #34d399);
-    box-shadow: 0 0 10px rgba(45, 212, 191, 0.45);
-    transition: left 0.4s ease, width 0.4s ease;
-}
-
-.axis {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 7px;
-    font-size: 10.5px;
-    color: #55555c;
+    font: 700 17px var(--inter);
+    color: #0b0b0c;
 }
 
 .bullets {
-    margin: 0;
+    margin: 8px 0 0;
     padding-left: 18px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    font-size: 14.5px;
+    gap: 7px;
+    font-size: 14px;
     line-height: 1.6;
-    color: #c9c9ce;
+    color: #2a2f2e;
 }
 
 .bullets li::marker {
-    color: var(--teal);
+    color: #0d9488;
 }
 
 .soon {
+    margin-top: 8px;
     font-size: 14px;
-    color: var(--mut);
+    color: #55555c;
 }
 
 .skills {
-    padding-top: 14px;
-    border-top: 1px solid var(--line);
-    font-size: 12px;
-    color: var(--mut);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills li {
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    font: 500 12.5px var(--inter);
+    color: #c9d6d3;
 }
 
 /* scrolling column */

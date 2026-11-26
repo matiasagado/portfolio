@@ -2,13 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { jobs } from '../data';
 import styles from './styles/experience.module.css';
 
-// Time bar axis: 2024 to 2027.
-const AXIS = [2024, 2025, 2026, 2027];
-const FROM = 2024;
-const RANGE = 3;
-const pct = (year: number) => `${(((year - FROM) / RANGE) * 100).toFixed(1)}%`;
-const width = ([start, end]: [number, number]) => `${(((end - start) / RANGE) * 100).toFixed(1)}%`;
-
 /**
  * Sticky-scroll experience: the role list scrolls on the right while a card on the left
  * stays pinned and shows whichever role is crossing the middle of the screen.
@@ -43,25 +36,21 @@ export default function Experience() {
                             <strong>{job.company}</strong>
                             <small>{job.place}</small>
                         </span>
-                        <span className={`mono ${styles.dates}`}>{job.dates}</span>
+                        <span className={styles.pill}>{job.dates}</span>
                     </div>
-                    <p className={styles.role}>{job.role}</p>
-                    <div aria-hidden="true">
-                        <div className={styles.track}>
-                            <span style={{ left: pct(job.span[0]), width: width(job.span) }} />
-                        </div>
-                        <div className={`mono ${styles.axis}`}>
-                            {AXIS.map((y) => <span key={y}>{y}</span>)}
-                        </div>
+                    <div className={styles.inner}>
+                        <p className={styles.role}>{job.role}</p>
+                        {job.bullets.length > 0 ? (
+                            <ul className={styles.bullets}>
+                                {job.bullets.map((b) => <li key={b}>{b}</li>)}
+                            </ul>
+                        ) : (
+                            <p className={styles.soon}>Details coming soon.</p>
+                        )}
                     </div>
-                    {job.bullets.length > 0 ? (
-                        <ul className={styles.bullets}>
-                            {job.bullets.map((b) => <li key={b}>{b}</li>)}
-                        </ul>
-                    ) : (
-                        <p className={styles.soon}>Details coming soon.</p>
-                    )}
-                    <p className={`mono ${styles.skills}`}>{job.skills.join(' · ')}</p>
+                    <ul className={styles.skills} aria-label="Skills">
+                        {job.skills.map((s) => <li key={s}>{s}</li>)}
+                    </ul>
                 </div>
             </div>
 

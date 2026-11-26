@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
-import { EMAIL, GITHUB_URL, GITHUB_USER, LINKEDIN_URL, RESUME_URL, USF_URL, focus, stack } from '../data';
+import { EMAIL, GITHUB_URL, GITHUB_USER, LINKEDIN_URL, RESUME_URL, USF_URL, stack } from '../data';
 import { useSfTime } from '../lib/useSfTime';
-import { timeAgo, useGithub } from '../lib/useGithub';
+import { useGithub } from '../lib/useGithub';
+import contributions from '../contributions.json';
+
+/** GitHub's contribution colors, from no activity (0) to the most (4). */
+const GREENS = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'];
 import FootholdMark from './footholdMark';
 import FootholdPhone from './footholdPhone';
 import styles from './styles/bento.module.css';
@@ -42,44 +46,28 @@ function Profile() {
     );
 }
 
-function HowIBuild() {
-    const [active, setActive] = useState('security');
-    const current = focus.find((f) => f.id === active) ?? focus[0];
+const steps = [
+    { n: '01', title: 'Embed', text: 'Sit with the people who have the problem and watch how they actually work.' },
+    { n: '02', title: 'Scope', text: 'Turn what I hear into a spec, a data model and a plan they can react to.' },
+    { n: '03', title: 'Ship', text: 'Deploy into their workflow, then measure and iterate until it sticks.' },
+];
+
+function HowIWork() {
     return (
-        <article className={`card ${styles.c2} ${styles.pad}`}>
+        <article className={`card ${styles.c2} ${styles.how}`}>
             <div className={styles.rowBetween}>
-                <span className="cap">How I build</span>
-                <span className="cap">Full-stack</span>
+                <span className="cap">How I work</span>
+                <span className={`mono ${styles.howTag}`}>problem → production</span>
             </div>
-            <div className={styles.split}>
-                <div>
-                    <p className={styles.howTitle}>From the schema</p>
-                    <p className={`ser ${styles.howSer}`}>to the interface.</p>
-                    <p className={styles.small}>I own features end to end: the data model, the API, the UI and the infrastructure that keeps it running.</p>
-                </div>
-                <div className={styles.focus}>
-                    <div role="tablist" aria-label="Focus" className={styles.chips}>
-                        {focus.map((f) => (
-                            <button
-                                key={f.id}
-                                type="button"
-                                role="tab"
-                                id={`focus-tab-${f.id}`}
-                                aria-selected={f.id === active}
-                                aria-controls="focus-panel"
-                                className={`${styles.chip} ${f.id === active ? styles.chipOn : ''}`}
-                                onClick={() => setActive(f.id)}
-                            >
-                                {f.label}
-                            </button>
-                        ))}
-                    </div>
-                    <div role="tabpanel" id="focus-panel" aria-labelledby={`focus-tab-${current.id}`}>
-                        <p className={styles.focusTitle}>{current.title}</p>
-                        <p className={styles.small}>{current.text}</p>
-                    </div>
-                </div>
-            </div>
+            <ol className={styles.steps}>
+                {steps.map((s) => (
+                    <li key={s.n}>
+                        <span className={styles.stepN}>{s.n}</span>
+                        <p className={styles.stepT}>{s.title}</p>
+                        <p className={styles.stepD}>{s.text}</p>
+                    </li>
+                ))}
+            </ol>
         </article>
     );
 }
@@ -172,17 +160,13 @@ function Github() {
                         {stat(gh.data.pushedThisYear, `Pushed in ${new Date().getFullYear()}`)}
                         {stat(gh.data.sinceYear, 'On GitHub since')}
                     </div>
-                    <ul className={styles.repos}>
-                        {gh.data.recent.map((r) => (
-                            <li key={r.name}>
-                                <a href={r.html_url} target="_blank" rel="noopener noreferrer">
-                                    <span className="mono">{r.name}</span>
-                                    <span className={styles.repoLang}>{r.language ?? ''}</span>
-                                    <span className={styles.repoTime}>{timeAgo(r.pushed_at)}</span>
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className={styles.heatWrap}>
+                        <div className={styles.heat} aria-label={`GitHub contributions since ${contributions.from}`} role="img">
+                            {contributions.levels.map((level, i) => (
+                                <span key={i} style={{ background: GREENS[level] ?? GREENS[0] }} />
+                            ))}
+                        </div>
+                    </div>
                 </>
             ) : gh.status === 'loading' ? (
                 <div className={styles.stats} aria-busy="true">
@@ -193,7 +177,7 @@ function Github() {
             )}
 
             <div className={styles.ghFoot}>
-                <span>Live from GitHub</span>
+                <span>Contribution graph syncs from GitHub in the build</span>
                 <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className={styles.handle}>@MATIASAGADO ↗</a>
             </div>
         </article>
@@ -243,7 +227,7 @@ export default function Bento() {
         <section className="w" aria-label="About me at a glance" style={{ paddingBottom: 140 }}>
             <div className={styles.bento}>
                 <Profile />
-                <HowIBuild />
+                <HowIWork />
                 <Stack />
                 <Usf />
                 <Quote />

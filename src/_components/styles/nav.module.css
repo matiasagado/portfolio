@@ -1,65 +1,75 @@
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 19px 50px;
-    margin: 0 103px;
-    background: rgba(244, 241, 234, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+.top {
     position: sticky;
     top: 0;
-    z-index: 100;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
-}
-
-.navScrolled {
-    border-color: #d0ccc4;
-}
-
-.heroLink {
-    font-weight: 1000;
-    font-size: 1.2rem;
-    letter-spacing: 0em;
-    text-decoration: none;
-    color: inherit;
-    font-family: var(--text-accent);
-}
-
-.heroLink:hover {
-    color: var(--accent);
-}
-
-.linksContainer {
+    z-index: 20;
     display: flex;
     align-items: center;
-    gap: 40px;
+    justify-content: center;
+    padding: 14px 24px;
+    pointer-events: none;
 }
 
-.linksContainer a {
-    font-size: 0.71rem;
-    font-weight: 410;
-    letter-spacing: 0.2em;
-    text-decoration: none;
-    color: var(--code-bg);
-    font-family: var(--navLinks);
+.top > * {
+    pointer-events: auto;
 }
 
-.linksContainer a:hover {
-    color: var(--accent);
+.mark {
+    position: absolute;
+    left: 24px;
+    top: 14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line2);
+    background: var(--card);
+    font: 800 12px var(--display);
+    color: #fff;
 }
 
-.resumeLink {
-    background: #1a1a1a;
-    color: #f4f1ea !important;
-    padding: 10px 22px;
+.pill {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px;
+    background: rgba(20, 20, 22, 0.8);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--line2);
     border-radius: 999px;
-    letter-spacing: 0.1em;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.resumeLink:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+.pill a {
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #d8d8dc;
+    transition: color 0.15s ease;
+}
+
+.pill a:hover {
+    color: #fff;
+}
+
+.pill .on {
+    background: #fff;
+    color: #0a0a0a;
+}
+
+.pill .on:hover {
+    color: #0a0a0a;
+}
+
+.pill .call {
+    background: #1c1c1f;
+    color: #fff;
+}
+
+@media (max-width: 640px) {
+    .hideSm,
+    .mark {
+        display: none;
+    }
 }

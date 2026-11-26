@@ -20,7 +20,7 @@ export default function About() {
                         </p>
                         <p>
                             I learned the customer side first. Years in sales and client-facing roles (cold-calling, running
-                            a CRM I built myself, keeping 100-guest events on track) taught me to hear the real problem
+                            a CRM I built myself, keeping 100-guest events on track) taught me to understand the person
                             behind the request.
                         </p>
                         <p>

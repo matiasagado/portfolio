@@ -65,16 +65,6 @@ const projects: Project[] = [
         visual: <Laptop src="/groot.png" alt="Groot dashboard" />,
     },
     {
-        key: 'polaris',
-        title: 'Polaris',
-        tone: '#34d399',
-        glow: 'rgba(52,211,153,.28)',
-        description: 'A multithreaded inverted-index search engine capable of indexing 10,000+ documents, with algorithmic optimizations to improve query throughput.',
-        points: ['Inverted index over 10,000+ documents', 'Multithreaded indexing and query handling', 'Web search interface served with Java Servlets'],
-        tech: [['Java', '#f89820'], ['Servlets', '#d8d8dc']],
-        visual: <Laptop src="/polaris.png" alt="Polaris search engine" />,
-    },
-    {
         key: 'shiftgrid',
         title: 'ShiftGrid',
         tone: '#a3e635',
@@ -89,6 +79,16 @@ const projects: Project[] = [
         tech: [['TypeScript', '#3178c6'], ['React', '#61dafb'], ['Next.js', '#fff'], ['Prisma', '#a78bfa'], ['Supabase', '#3ecf8e'], ['Redis', '#dc382d']],
         visual: <ShiftGridApp />,
     },
+    {
+        key: 'polaris',
+        title: 'Polaris',
+        tone: '#34d399',
+        glow: 'rgba(52,211,153,.28)',
+        description: 'A multithreaded inverted-index search engine capable of indexing 10,000+ documents, with algorithmic optimizations to improve query throughput.',
+        points: ['Inverted index over 10,000+ documents', 'Multithreaded indexing and query handling', 'Web search interface served with Java Servlets'],
+        tech: [['Java', '#f89820'], ['Servlets', '#d8d8dc']],
+        visual: <Laptop src="/polaris.png" alt="Polaris search engine" />,
+    },
 ];
 
 export default function Showcase() {
@@ -101,11 +101,16 @@ export default function Showcase() {
                 <p className={`cap ${styles.scroll}`}>Scroll to explore ↓</p>
             </div>
 
-            <div className="w">
+            {/* Stacking cards: each card pins near the top and the next one slides up over it. */}
+            <div className={`w ${styles.stack}`}>
                 {projects.map((p, i) => {
                     const n = String(i + 1).padStart(2, '0');
                     return (
-                        <article key={p.key} className={styles.row} style={{ '--tone': p.tone, '--glow': p.glow } as CSSProperties}>
+                        <article
+                            key={p.key}
+                            className={styles.card}
+                            style={{ '--tone': p.tone, '--glow': p.glow, top: 90 + i * 18 } as CSSProperties}
+                        >
                             <div className={styles.copy}>
                                 <h3 className={styles.name}>{p.title} <small>{n} / {total}</small></h3>
                                 <p className={styles.desc}>{p.description}</p>
@@ -118,7 +123,6 @@ export default function Showcase() {
                                     ))}
                                 </ul>
                             </div>
-                            <div className={styles.rail} aria-hidden="true"><span className={styles.node}>{n}</span></div>
                             <div className={styles.stage}>{p.visual}</div>
                         </article>
                     );

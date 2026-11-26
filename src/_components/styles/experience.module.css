@@ -1,4 +1,42 @@
+/* dot grid with a teal spotlight that follows the cursor */
+.bg {
+    --x: -1000px;
+    --y: -1000px;
+    position: relative;
+}
+
+.dots,
+.lit,
+.glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.dots,
+.lit {
+    background-size: 22px 22px;
+    background-position: 11px 11px;
+}
+
+.dots {
+    background-image: radial-gradient(#232327 1.1px, transparent 1.4px);
+    -webkit-mask-image: linear-gradient(transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(transparent, #000 8%, #000 92%, transparent);
+}
+
+.lit {
+    background-image: radial-gradient(#2dd4bf 1.4px, transparent 1.7px);
+    -webkit-mask-image: radial-gradient(260px circle at var(--x) var(--y), #000, transparent 70%);
+    mask-image: radial-gradient(260px circle at var(--x) var(--y), #000, transparent 70%);
+}
+
+.glow {
+    background: radial-gradient(460px circle at var(--x) var(--y), rgba(45, 212, 191, 0.09), transparent 70%);
+}
+
 .layout {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 72px;

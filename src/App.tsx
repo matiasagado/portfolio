@@ -5,8 +5,11 @@ import Showcase from './_components/showcase';
 import About from './_components/about';
 import Experience from './_components/experience';
 import Footer from './_components/footer';
+import { useCleanUrl } from './lib/useCleanUrl';
 
 export default function App() {
+    useCleanUrl();
+
     return (
         <>
             <Nav />

@@ -42,7 +42,6 @@ export default function Experience() {
                     <h2 className="eh">Experience</h2>
                     <div className={styles.card} aria-live="polite">
                         <div className={styles.cardHead}>
-                            <span className={styles.ini} aria-hidden="true">{job.initials}</span>
                             <span className={styles.who}>
                                 <strong>{job.company}</strong>
                                 <small>{job.place}</small>

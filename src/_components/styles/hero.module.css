@@ -21,7 +21,7 @@
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(45% 40% at 50% 50%, rgba(5, 5, 5, 0.85), transparent 75%),
+        radial-gradient(55% 50% at 50% 50%, rgba(5, 5, 5, 0.85), transparent 75%),
         linear-gradient(transparent 70%, var(--bg));
     pointer-events: none;
 }

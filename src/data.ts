@@ -23,7 +23,6 @@ export type Job = {
     company: string;
     place: string;
     dates: string;
-    initials: string;
     skills: string[];
     bullets: string[];
 };
@@ -34,7 +33,6 @@ export const jobs: Job[] = [
         company: 'USF Computer Science',
         place: 'San Francisco, CA',
         dates: 'Fall 2026',
-        initials: 'CS',
         skills: ['Product pitching', 'Technical scoping', 'Documentation'],
         bullets: [
             'Selected to pitch Foothold as a senior capstone project for USF\u2019s Fall 2026 cohort.',
@@ -46,7 +44,6 @@ export const jobs: Job[] = [
         company: 'Handshake',
         place: 'Part-time · Remote',
         dates: 'Jan 2026 – Present',
-        initials: 'HS',
         skills: ['AI model evaluation', 'Analytical thinking', 'Prompt design'],
         bullets: [
             'Work with AI researchers to test LLM outputs and give structured feedback so model responses are more accurate and useful.',
@@ -59,7 +56,6 @@ export const jobs: Job[] = [
         company: 'Santa Fe Post Acute',
         place: 'San Francisco Bay Area',
         dates: 'Sep 2026',
-        initials: 'SF',
         skills: ['Next.js', 'TypeScript', 'Prisma', 'Supabase', 'Redis'],
         bullets: [
             'Designed and built ShiftGrid, a scheduling platform that replaced a paper-based process for a ~20-person dietary team.',
@@ -72,7 +68,6 @@ export const jobs: Job[] = [
         company: 'University of San Francisco',
         place: 'Part-time · San Francisco, CA',
         dates: 'Jan 2024 – Mar 2026',
-        initials: 'USF',
         skills: ['Leadership', 'Risk assessment', 'Emergency response'],
         bullets: [
             'Maintained safety oversight for university aquatic facilities, with rapid emergency response when required.',

@@ -17,13 +17,22 @@ type Project = {
     visual: ReactNode;
 };
 
-/** A browser frame around a screenshot. `fill` crops a wide screenshot to Groot's proportions so the frames match. */
+/** The browser frame (bezel and three dots) shared by every project visual. */
+function Frame({ children, className = '' }: { children: ReactNode; className?: string }) {
+    return (
+        <div className={`${styles.laptop} ${className}`}>
+            <div className={styles.bar}><i /><i /><i /></div>
+            {children}
+        </div>
+    );
+}
+
+/** A screenshot in the browser frame. `fill` crops a wide screenshot to Groot's proportions so the frames match. */
 function Laptop({ src, alt, fill = false }: { src: string; alt: string; fill?: boolean }) {
     return (
-        <div className={`${styles.laptop} ${fill ? styles.fill : ''}`}>
-            <div className={styles.bar}><i /><i /><i /></div>
+        <Frame className={fill ? styles.fill : ''}>
             <img src={src} alt={alt} loading="lazy" />
-        </div>
+        </Frame>
     );
 }
 
@@ -78,7 +87,7 @@ const projects: Project[] = [
             'One central system instead of back-and-forth with ~20 employees',
         ],
         tech: [['TypeScript', '#3178c6'], ['React', '#61dafb'], ['Next.js', '#fff'], ['Prisma', '#a78bfa'], ['Supabase', '#3ecf8e'], ['Redis', '#dc382d']],
-        visual: <ShiftGridApp />,
+        visual: <Frame className={styles.framedApp}><ShiftGridApp /></Frame>,
     },
     {
         key: 'polaris',

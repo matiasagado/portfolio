@@ -195,6 +195,13 @@
     border-radius: 5px;
 }
 
+/* the live ShiftGrid UI sits in the frame like a screenshot: no border or shadow of its own */
+.framedApp > :last-child {
+    border: 0;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
 /* same proportions as the Groot screenshot; the centered content stays in view */
 .fill img {
     aspect-ratio: 3002 / 1634;

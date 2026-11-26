@@ -1,9 +1,9 @@
 <div align="center">
   <h1>matiasagado.com</h1>
-  <p>My personal portfolio: a dark, single-page site built with Vite, React and TypeScript.</p>
 </div>
 
-https://github.com/user-attachments/assets/31a82095-71f4-4359-ae1b-94f1f63eb308
+<img width="1407" height="826" alt="Screenshot 2026-11-25 at 10 33 30 PM" src="https://github.com/user-attachments/assets/35b5edc9-e147-4635-b4d8-3f5cdf5a811c" />
+
 
 ## Set-up
 

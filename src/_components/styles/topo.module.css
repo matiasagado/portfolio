@@ -1,0 +1,49 @@
+/* Values match option E on the design board. */
+.wrap {
+    --x: 50%;
+    --y: 45%;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* 40px bleed on every side so the drift never shows an edge */
+.lines {
+    position: absolute;
+    inset: -40px;
+    width: calc(100% + 80px);
+    height: calc(100% + 80px);
+    animation: drift 38s ease-in-out infinite alternate;
+}
+
+.lit {
+    -webkit-mask-image: radial-gradient(260px circle at var(--x) var(--y), #000, transparent 72%);
+    mask-image: radial-gradient(260px circle at var(--x) var(--y), #000, transparent 72%);
+}
+
+.glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(380px circle at calc(var(--x) - 40px) calc(var(--y) - 40px), rgba(45, 212, 191, 0.08), transparent 70%);
+}
+
+.fade {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(55% 50% at 50% 50%, rgba(5, 5, 5, 0.85), transparent 75%),
+        linear-gradient(transparent 75%, var(--bg));
+}
+
+@keyframes drift {
+    to {
+        transform: translate(-36px, 18px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lines {
+        animation: none;
+    }
+}

@@ -3,9 +3,10 @@
     top: 0;
     z-index: 20;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 14px 24px;
+    height: 0;
+    padding: 0 24px;
     pointer-events: none;
 }
 
@@ -29,6 +30,7 @@
 }
 
 .pill {
+    margin-top: 14px;
     display: flex;
     align-items: center;
     gap: 4px;

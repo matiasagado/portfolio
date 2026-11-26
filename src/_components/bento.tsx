@@ -20,7 +20,7 @@ function Profile() {
     return (
         <article className={`card ${styles.r2} ${styles.profile}`}>
             <div>
-                <p className={styles.name}>Matias <span className="ser">Agado</span></p>
+                <p className={styles.name}>Matias Agado</p>
                 <p className={styles.meta}>Software Engineer · San Francisco · <time>{sfTime}</time></p>
             </div>
             <span className={styles.status}><span aria-hidden="true" />Open to full-time roles</span>
@@ -113,7 +113,13 @@ function Usf() {
 function Quote() {
     return (
         <article className={`card ${styles.quote}`}>
-            <p className="ser">Good infrastructure is invisible. It just works, every time.</p>
+            <div>
+                <span className={styles.quoteMark} aria-hidden="true">&ldquo;</span>
+                <p>
+                    Good infrastructure is <span className={styles.ghost}>invisible.</span> It just works,{' '}
+                    <span className="gp">every time.</span>
+                </p>
+            </div>
         </article>
     );
 }

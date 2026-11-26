@@ -25,12 +25,34 @@
     font-size: 10px;
 }
 
-.row {
+.stack {
+    padding-bottom: 40px;
+}
+
+.card {
+    position: sticky;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1.15fr);
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 48px;
     align-items: center;
-    min-height: 560px;
+    min-height: 620px;
+    margin-bottom: 72px;
+    padding: 56px;
+    border-radius: 36px;
+    background: radial-gradient(70% 90% at 100% 100%, var(--glow), transparent 60%), #0c0d0e;
+    border: 1px solid #22252a;
+    box-shadow: 0 -30px 60px -20px rgba(0, 0, 0, 0.85);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    left: 56px;
+    right: 56px;
+    top: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--tone), transparent 70%);
 }
 
 .copy {
@@ -131,47 +153,15 @@
     border-radius: 50%;
 }
 
-.rail {
-    position: relative;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.rail::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    transform: translateX(-50%);
-    background: linear-gradient(transparent, var(--tone), transparent);
-}
-
-.node {
-    position: relative;
-    align-self: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: var(--bg);
-    box-shadow: 0 0 0 2px var(--tone), 0 0 30px var(--tone);
-    font: 800 13px var(--display);
-    color: #fff;
-}
-
 .stage {
     position: relative;
-    padding: 40px 20px 40px 40px;
+    padding: 20px 0 20px 30px;
 }
 
 .stage::before {
     content: '';
     position: absolute;
-    inset: 10% 5%;
+    inset: 0;
     background: radial-gradient(closest-side, var(--glow), transparent);
     filter: blur(30px);
 }
@@ -212,19 +202,23 @@
 }
 
 @media (max-width: 1000px) {
-    .row {
+    .card {
+        position: relative;
+        top: auto !important;
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 28px;
         min-height: 0;
-        padding: 40px 0;
+        margin-bottom: 24px;
+        padding: 32px 24px;
     }
 
-    .rail {
-        display: none;
+    .card::before {
+        left: 24px;
+        right: 24px;
     }
 
     .stage {
-        padding: 20px 0 40px 40px;
+        padding: 10px 0 20px 24px;
     }
 }
 

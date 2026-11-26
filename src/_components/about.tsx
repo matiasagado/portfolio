@@ -1,42 +1,38 @@
-import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from '../data';
 import styles from './styles/about.module.css';
-
-const facts = [
-    { label: 'Education', value: 'B.S. Computer Science', sub: 'University of San Francisco' },
-    { label: 'Now', value: 'LLM Evaluation', sub: 'Handshake AI' },
-    { label: 'Building', value: 'Foothold', sub: 'Campus clubs & events' },
-];
 
 export default function About() {
     return (
-        <section id="about" className={`w ${styles.two}`}>
-            <div>
-                <p className="cap">About</p>
-                <h2 className="eh" style={{ marginTop: 14 }}>A bit about me</h2>
-            </div>
-            <div className={styles.body}>
-                <p className={styles.lead}>
-                    I&apos;m a software engineer in San Francisco who builds full-stack products end to end, from the data
-                    model and API to the interface and the infrastructure underneath.
-                </p>
-                <p className={styles.text}>
-                    Right now I&apos;m building Foothold, a multi-tenant platform for campus clubs and events, and evaluating
-                    language models at Handshake AI. Before engineering I spent years in sales and client-facing roles,
-                    which is where I learned to understand what people need before I build it.
-                </p>
-                <div className={styles.facts}>
-                    {facts.map((f) => (
-                        <div key={f.label}>
-                            <small>{f.label}</small>
-                            <span>{f.value}</span>
-                            <em>{f.sub}</em>
-                        </div>
-                    ))}
-                </div>
-                <div className={styles.links}>
-                    <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-                    <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-                    <a href={RESUME_URL} download="Resume-Matias-Agado.pdf">Resume <span aria-hidden="true">↓</span></a>
+        <section id="about" className="w" style={{ paddingBottom: 150 }}>
+            <div className={styles.panel}>
+                <div className={styles.blob} aria-hidden="true" />
+                <div className={styles.inner}>
+                    <div>
+                        <p className={styles.kicker}>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4 4-6 8-6s8 2 8 6" /></svg>
+                            About me
+                        </p>
+                        <h2 className={styles.title}>From problem to production.</h2>
+                    </div>
+                    <div className={styles.text}>
+                        <p className={styles.lead}>
+                            I&apos;m Matias, an engineer in San Francisco. I sit with the people who have the problem, find
+                            what they actually need, and ship it.
+                        </p>
+                        <p>
+                            I learned the customer side first. Years in sales and client-facing roles (cold-calling, running
+                            a CRM I built myself, keeping 100-guest events on track) taught me to hear the real problem
+                            behind the request.
+                        </p>
+                        <p>
+                            At Santa Fe Post Acute, I worked with the dietary team to replace their paper schedules with
+                            ShiftGrid, giving their manager back about 10 hours a week.
+                        </p>
+                        <p>
+                            Now I&apos;m building Foothold, a platform that helps college students find their clubs and their
+                            people. I also evaluate language models at Handshake AI, testing where they break so researchers
+                            can fix them.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

@@ -6,10 +6,10 @@ import { useEffect, useRef } from 'react';
  * so the lines bend and slide like a snake. A teal spotlight follows the cursor.
  */
 
-const CELL = 14;          // grid spacing in CSS px
-const LEVELS = 16;        // number of contour lines
-const SPEED = 0.045;      // how fast the terrain shifts
-const FPS = 30;
+const CELL = 10;          // grid spacing in CSS px
+const LEVELS = 30;        // number of contour lines
+const SPEED = 0.006;      // how fast the terrain shifts: a slow crawl
+const FPS = 24;
 const SPOT = 280;         // spotlight radius
 
 function height(x: number, y: number, t: number) {
@@ -18,7 +18,8 @@ function height(x: number, y: number, t: number) {
         Math.sin(x * 0.0042 + t * 0.9) * Math.cos(y * 0.0051 - t * 0.6) +
         0.6 * Math.sin((x * 0.6 + y * 0.8) * 0.0063 - t * 0.7) +
         0.45 * Math.cos((x * 0.8 - y * 0.6) * 0.0091 + t * 1.1) +
-        0.25 * Math.sin(x * 0.0143 + y * 0.0117 + t * 1.4)
+        0.25 * Math.sin(x * 0.0143 + y * 0.0117 + t * 1.4) +
+        0.12 * Math.cos(x * 0.0231 - y * 0.0197 + t * 1.7)
     );
 }
 
@@ -62,7 +63,7 @@ export default function Topo({ className }: { className?: string }) {
 
             path = new Path2D();
             for (let l = 0; l < LEVELS; l++) {
-                const lv = -2.2 + (4.4 * (l + 0.5)) / LEVELS;
+                const lv = -2.3 + (4.6 * (l + 0.5)) / LEVELS;
                 for (let j = 0; j < rows - 1; j++) {
                     for (let i = 0; i < cols - 1; i++) {
                         const a = field[j * cols + i], b = field[j * cols + i + 1];
@@ -94,7 +95,7 @@ export default function Topo({ className }: { className?: string }) {
 
             ctx.clearRect(0, 0, w, h);
             ctx.lineWidth = 1;
-            ctx.strokeStyle = '#232c2b';
+            ctx.strokeStyle = 'rgba(150, 185, 178, 0.17)';
             ctx.stroke(path);
 
             if (mouse) {

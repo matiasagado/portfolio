@@ -17,9 +17,10 @@ type Project = {
     visual: ReactNode;
 };
 
-function Laptop({ src, alt }: { src: string; alt: string }) {
+/** A browser frame around a screenshot. `fill` crops a wide screenshot to Groot's proportions so the frames match. */
+function Laptop({ src, alt, fill = false }: { src: string; alt: string; fill?: boolean }) {
     return (
-        <div className={styles.laptop}>
+        <div className={`${styles.laptop} ${fill ? styles.fill : ''}`}>
             <div className={styles.bar}><i /><i /><i /></div>
             <img src={src} alt={alt} loading="lazy" />
         </div>
@@ -87,7 +88,7 @@ const projects: Project[] = [
         description: 'A multithreaded inverted-index search engine capable of indexing 10,000+ documents, with algorithmic optimizations to improve query throughput.',
         points: ['Inverted index over 10,000+ documents', 'Multithreaded indexing and query handling', 'Web search interface served with Java Servlets'],
         tech: [['Java', '#f89820'], ['Servlets', '#d8d8dc']],
-        visual: <Laptop src="/polaris.png" alt="Polaris search engine" />,
+        visual: <Laptop src="/polaris.png" alt="Polaris search engine" fill />,
     },
 ];
 
@@ -101,7 +102,7 @@ export default function Showcase() {
                 <p className={`cap ${styles.scroll}`}>Scroll to explore ↓</p>
             </div>
 
-            {/* Stacking cards: each card pins near the top and the next one slides up over it. */}
+            {/* Each card pins at the same spot, and the next one slides up and covers it. */}
             <div className={`w ${styles.stack}`}>
                 {projects.map((p, i) => {
                     const n = String(i + 1).padStart(2, '0');
@@ -109,7 +110,7 @@ export default function Showcase() {
                         <article
                             key={p.key}
                             className={styles.card}
-                            style={{ '--tone': p.tone, '--glow': p.glow, top: 90 + i * 18 } as CSSProperties}
+                            style={{ '--tone': p.tone, '--glow': p.glow, top: 90 } as CSSProperties}
                         >
                             <div className={styles.copy}>
                                 <h3 className={styles.name}>{p.title} <small>{n} / {total}</small></h3>
